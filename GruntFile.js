@@ -81,12 +81,13 @@ module.exports = function (grunt) {
     grunt.task.loadNpmTasks('grunt-mocha');
     grunt.task.loadNpmTasks('grunt-mocha-test');
     grunt.task.loadNpmTasks('grunt-browserify');
+    grunt.task.loadNpmTasks('grunt-browser-sync');
     grunt.task.loadTasks('./tasks');
 
 
     // Tasks
     grunt.registerTask('lint',  ['jshint']);
-    grunt.registerTask('test',  ['lint', 'build', 'mochaTest', 'mocha']);
+    grunt.registerTask('test',  ['lint', 'build', 'mochaTest', 'mocha', 'watch']);
     grunt.registerTask('build', ['browserify', 'themify', 'uglify', 'usebanner']);
 
 };
