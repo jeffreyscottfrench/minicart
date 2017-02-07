@@ -54,8 +54,8 @@ View.prototype.redraw = function redraw() {
  */
 View.prototype.show = function show() {
     if (!this.isShowing) {
-        css.add(document.body, constants.SHOWING_CLASS);
-        this.isShowing = true;
+      css.add(document.body, constants.SHOWING_CLASS);
+      this.isShowing = true;
     }
 };
 
@@ -124,7 +124,14 @@ View.prototype.bind = function bind(form) {
  */
 View.prototype.addItem = function addItem(idx, data) {
     this.redraw();
-    this.show();
+    if (config.confirm == 'cart') {
+      this.show();
+    } else if (config.confirm == 'message') {
+      css.add(document.body, constants.CONFIRM_MESSAGE_CLASS);
+      window.setTimeout(function(){
+        css.remove(document.body, constants.CONFIRM_MESSAGE_CLASS)
+      }, 1500);
+    } else {}
 
     var els = this.el.querySelectorAll('.' + constants.ITEM_CLASS);
     css.add(els[idx], constants.ITEM_CHANGED_CLASS);
@@ -139,7 +146,14 @@ View.prototype.addItem = function addItem(idx, data) {
  */
 View.prototype.changeItem = function changeItem(idx, data) {
     this.redraw();
-    this.show();
+    if (config.confirm == 'cart') {
+      this.show();
+    } else if (config.confirm == 'message') {
+      css.add(document.body, constants.CONFIRM_MESSAGE_CLASS);
+      window.setTimeout(function(){
+        css.remove(document.body, constants.CONFIRM_MESSAGE_CLASS)
+      }, 1500);
+    } else {}
 
     var els = this.el.querySelectorAll('.' + constants.ITEM_CLASS);
     css.add(els[idx], constants.ITEM_CHANGED_CLASS);

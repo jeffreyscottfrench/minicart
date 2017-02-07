@@ -13,6 +13,8 @@ module.exports = {
 
     SHOWING_CLASS: 'minicart-showing',
 
+    CONFIRM_MESSAGE_CLASS: 'confirm-message-showing',
+
     REMOVE_CLASS: 'minicart-remove',
 
     CLOSER_CLASS: 'minicart-closer',

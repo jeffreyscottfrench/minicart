@@ -20,6 +20,8 @@ var defaults = module.exports = {
 
     styles: '$STYLES$',
 
+    confirm: 'cart',
+
     strings: {
         button: 'Check Out with <img src="/images/af_paypal_logo.png" width="65" height="18" alt="PayPal" />',
         subtotal: 'Subtotal:',
