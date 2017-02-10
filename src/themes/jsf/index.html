@@ -5,7 +5,7 @@ var hasItems = !!items.length;
 var priceFormat = { format: true, currency: cart.settings("currency_code") };
 var totalFormat = { format: true, showCode: true };
 %>
-<form method="post" class="<% if (!hasItems) { %>minicart-empty<% } %>" action="<%= config.action %>" target="<%= config.target %>">
+<form method="post" class="clearfix <% if (!hasItems) { %>minicart-empty<% } %>" action="<%= config.action %>" target="<%= config.target %>">
     <button type="button" class="minicart-closer">&times;</button>
     <ul>
         <% for (var i= 0, idx = i + 1, len = items.length; i < len; i++, idx++) { %>
@@ -34,14 +34,16 @@ var totalFormat = { format: true, showCode: true };
                     <% } %>
                 </ul>
             </div>
-            <div class="minicart-details-quantity">
-                <input class="minicart-quantity" title="Adjust Quantity" data-minicart-idx="<%= i %>" name="quantity_<%= idx %>" type="text" pattern="[0-9]*" value="<%= items[i].get("quantity") %>" autocomplete="off" />
-            </div>
-            <div class="minicart-details-remove">
-                <button type="button" title="Remove All" class="minicart-remove" data-minicart-idx="<%= i %>">&times;</button>
-            </div>
-            <div class="minicart-details-price">
-                <span class="minicart-price"><%= items[i].total(priceFormat) %></span>
+            <div class="minicart-details-group">
+              <div class="minicart-details-quantity">
+                  <input class="minicart-quantity" title="Adjust Quantity" data-minicart-idx="<%= i %>" name="quantity_<%= idx %>" type="text" pattern="[0-9]*" value="<%= items[i].get("quantity") %>" autocomplete="off" />
+              </div>
+              <div class="minicart-details-remove">
+                  <button type="button" title="Remove All" class="minicart-remove" data-minicart-idx="<%= i %>">&times;</button>
+              </div>
+              <div class="minicart-details-price">
+                  <span class="minicart-price"><%= items[i].total(priceFormat) %></span>
+              </div>
             </div>
             <input type="hidden" name="item_name_<%= idx %>" value="<%= items[i].get("item_name") %>" />
             <input type="hidden" name="amount_<%= idx %>" value="<%= items[i].amount() %>" />
@@ -54,6 +56,10 @@ var totalFormat = { format: true, showCode: true };
         <% if (hasItems) { %>
             <div class="minicart-subtotal">
                 <%= config.strings.subtotal %> <%= cart.total(totalFormat) %>
+            </div>
+            <div class="minicart-cclogos">
+              <img src="/images/af_paypal_cc_logo.png" alt="PayPal" />
+              <div>- no PayPal account needed -</div>
             </div>
             <button class="minicart-submit" title="Secure Check Out at PayPal.com" type="submit" data-minicart-alt="<%= config.strings.buttonAlt %>"><%- config.strings.button %></button>
         <% } else { %>

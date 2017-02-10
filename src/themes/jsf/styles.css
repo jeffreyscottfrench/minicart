@@ -87,6 +87,15 @@
     padding-bottom: 10px;
     font-size: 16px;
     font-weight: bold;
+    text-align: center;
+}
+
+#PPMiniCart form.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
 }
 
 #PPMiniCart ul {
@@ -139,7 +148,12 @@
     width: 100%;
     text-align: left;
     padding-top: 7px;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+#PPMiniCart .minicart-details-group {
+    width: 100%;
+    text-align: right;
 }
 
 #PPMiniCart .minicart-details-quantity {
@@ -148,25 +162,24 @@
 
 #PPMiniCart .minicart-details-remove {
     display: inline-block;
-    margin: 0 0 0 20px;
+    margin: 0 9px 0 5px;
     padding: 2px 0 0;
 }
 
 #PPMiniCart .minicart-details-price {
     display: inline-block;
-    width: 100%;
-    padding-top: 10px;
+    width: 100px;
     text-align: right;
 }
 
 #PPMiniCart .minicart-attributes { /* extra descriptions */
     margin: 0;
-    padding: 0;
+    padding: 0 0 5px;
     background: transparent;
     border: 0;
     border-radius: 0;
     box-shadow: none;
-    color: #999;
+    color: #BBBBBB;
     font-size: 12px;
     line-height: 22px;
 }
@@ -228,14 +241,46 @@
 
 #PPMiniCart .minicart-footer {
     clear: left;
+    min-height: 45px;
+}
+#PPMiniCart .minicart-empty .minicart-footer {
+    clear: left;
 }
 
 #PPMiniCart .minicart-subtotal {
     position: relative;
-    float: left;
+    float: right;
     width: 100%;
-    padding-bottom: 20px;
+    padding: 10px;
     color: #666666;
+    text-align: right;
+}
+
+#PPMiniCart .minicart-cclogos {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: auto;
+    height: 33px; /* matches submit button */
+    padding: 4px 5px;
+    border: 1px solid #FBFBFB;
+    border-radius: 5px;
+    color: #666666;
+}
+
+#PPMiniCart .minicart-cclogos img {
+    vertical-align: middle;
+    width: auto;
+    height: 100%;
+}
+#PPMiniCart .minicart-cclogos div {
+    display: none; /* hide on very small screens */
+    vertical-align: bottom;
+    text-transform: uppercase;
+    font-style: italic;
+    font-size: 8px;
+    line-height: 8px;
+    padding-top: 2px;
 }
 
 #PPMiniCart .minicart-submit {
@@ -273,14 +318,28 @@
     padding: 0 0 0 2px;
 }
 
+
 @media only screen and (min-width: 520px) {
   #PPMiniCart {
     left: 10%;
     right: 10%;
   }
-  #PPMiniCart .minicart-subtotal {
-    width: auto;
-    padding: 10px 0 0;
+  #PPMiniCart .minicart-cclogos {
+      width: 33%;
+      max-width: 184px; /* matches submit button */
+      height: auto;
+      border: 1px solid #BBBBBB;
+      background: #FFFFFF;
+      text-align: center;
+  }
+
+  #PPMiniCart .minicart-cclogos img {
+      vertical-align: middle;
+      width: 100%;
+      height: auto;
+  }
+  #PPMiniCart .minicart-cclogos div {
+      display: block;
   }
   #PPMiniCart .minicart-spacer {
     display: none;
@@ -292,15 +351,7 @@
     right: 13%;
   }
   #PPMiniCart .minicart-details-name {
-    width: auto;
-    padding-bottom: 0;
-  }
-  #PPMiniCart .minicart-details-remove {
-    margin: 0 20px;
-  }
-  #PPMiniCart .minicart-details-price {
-    width: 100px;
-    padding-top: 0;
+    width: 60%;
   }
 }
 @media only screen and (min-width: 1024px) {

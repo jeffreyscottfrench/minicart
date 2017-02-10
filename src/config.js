@@ -23,10 +23,10 @@ var defaults = module.exports = {
     confirm: 'cart',
 
     strings: {
-        button: 'Check Out with <img src="/images/af_paypal_logo.png" width="65" height="18" alt="PayPal" />',
+        button: 'Check Out via <img src="/images/af_paypal_logo.png" width="65" height="18" alt="PayPal" />',
         subtotal: 'Subtotal:',
         discount: 'Discount:',
-        empty: 'Your shopping cart is empty'
+        empty: 'Your cart is empty'
     }
 
 };

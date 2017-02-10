@@ -1916,10 +1916,10 @@ var defaults = module.exports = {
     confirm: 'cart',
 
     strings: {
-        button: 'Check Out with <img src="/images/af_paypal_logo.png" width="65" height="18" alt="PayPal" />',
+        button: 'Check Out via <img src="/images/af_paypal_logo.png" width="65" height="18" alt="PayPal" />',
         subtotal: 'Subtotal:',
         discount: 'Discount:',
-        empty: 'Your shopping cart is empty'
+        empty: 'Your cart is empty'
     }
 
 };
@@ -2412,7 +2412,7 @@ var currencies = {
     TTD: { before: 'TT$' },
     TWD: { before: 'NT$' },
     UAH: { before: '\u20b4' },
-    USD: { before: '$', code: true },
+    USD: { before: '$', code: false },
     UYU: { before: '$U' },
     VEF: { before: 'Bs' },
     VND: { before: '\u20ab' },
@@ -3034,5 +3034,5 @@ module.exports = viewevents = {
 
 };
 
-},{"./constants":11,"./util/events":16}]},{},[9,10,11,12,13,14,15,16,17,18,19,20,21,23,22])
+},{"./constants":11,"./util/events":16}]},{},[9,10,11,12,13,14,15,16,17,18,19,20,21,22,23])
 ;

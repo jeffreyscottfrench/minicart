@@ -57,7 +57,7 @@ var currencies = {
     TTD: { before: 'TT$' },
     TWD: { before: 'NT$' },
     UAH: { before: '\u20b4' },
-    USD: { before: '$', code: true },
+    USD: { before: '$', code: false },
     UYU: { before: '$U' },
     VEF: { before: 'Bs' },
     VND: { before: '\u20ab' },
