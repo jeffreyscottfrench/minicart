@@ -7,7 +7,7 @@ var totalFormat = { format: true, showCode: true };
 %>
 <form method="post" class="clearfix <% if (!hasItems) { %>minicart-empty<% } %>" action="<%= config.action %>" target="<%= config.target %>">
     <button type="button" class="minicart-closer">&times;</button>
-    <ul>
+    <ul class="minicart-contents">
         <% for (var i= 0, idx = i + 1, len = items.length; i < len; i++, idx++) { %>
         <li class="minicart-item">
             <div class="minicart-details-name">

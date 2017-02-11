@@ -2789,7 +2789,6 @@ function View(model) {
     // HTML
     wrapper.id = config.name;
     config.parent.appendChild(wrapper);
-
     // CSS
     css.inject(document.getElementsByTagName('head')[0], config.styles);
 
@@ -2819,6 +2818,13 @@ View.prototype.show = function show() {
       css.add(document.body, constants.SHOWING_CLASS);
       this.isShowing = true;
     }
+    /**
+    * Wait to make sure the cart is showing, then scroll to the top of it
+    */
+    window.setTimeout(function(){
+      document.getElementById(config.name).scrollIntoView();
+      window.scrollBy(0,-130);
+    }, 100);
 };
 
 

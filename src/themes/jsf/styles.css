@@ -73,6 +73,15 @@
     z-index: 300;
 }
 
+#PPMiniCart .minicart-empty{
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    width: 300px;
+    margin-left: -150px;
+    z-index: 300;
+}
+
 #PPMiniCart form {
     position: relative;
     width: 100%;
@@ -245,6 +254,7 @@
 }
 #PPMiniCart .minicart-empty .minicart-footer {
     clear: left;
+    min-height: 0;
 }
 
 #PPMiniCart .minicart-subtotal {
@@ -347,8 +357,14 @@
 }
 @media only screen and (min-width: 768px) {
   #PPMiniCart {
+    position: fixed;
     left: 13%;
     right: 13%;
+  }
+  #PPMiniCart form ul.minicart-contents {
+    min-height: 200px;
+    max-height: 600px;
+    overflow-y: scroll;
   }
   #PPMiniCart .minicart-details-name {
     width: 60%;
